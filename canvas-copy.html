@@ -1,0 +1,37 @@
+<head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      #myCanvas {
+        border: 1px solid #9C9898;
+      }
+    </style>
+    <script>
+      window.onload = function() {
+
+        var imageObj = new Image();
+        imageObj.src = "http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg";
+
+        var dynamicCanvas = document.createElement("canvas");
+        var dynamicContext = dynamicCanvas.getContext("2d");
+        dynamicCanvas .height="400";
+        dynamicCanvas.width="578";
+
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+
+        imageObj.onload = function() {
+          dynamicContext.drawImage(imageObj, 69, 50);
+          context=context.drawImage(dynamicCanvas,69,50);
+          window.open(canvas.toDataURL());
+        };
+      };
+
+    </script>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="400"></canvas>
+  </body>
+</html>
